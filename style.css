@@ -6,12 +6,19 @@
 
 body {
     background-color: var(--black);
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
     text-align: center;
-    color: var(--purple);
+    color: var(--blue);
     padding: 2em;
+}
+
+header h1 {
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: 600;
 }
 
 :root {
@@ -33,7 +40,13 @@ header {
     justify-content: center;
 }
 
-.gameboard > div {
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--purple);
+    font-family: 'Gochi Hand', cursive;
+    font-size: 140px;
 }
 
 div #box1 {
