@@ -100,8 +100,6 @@ const game = (() => {
             // if array's index is empty (""), allow to change it for a marker
             if (array[boxIndex] === '') {
                 array[boxIndex] = currentPlayer.marker;
-                console.log(array);
-                console.log(player1.marker);
                 gameBoard.renderArray(array);
             }
             // Check if there's a winner
