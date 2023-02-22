@@ -7,8 +7,6 @@ const player = (name, marker) => {
 // Gameboard Module
 
 const gameBoard = (() => {
-    // Select all boxes and convert Nodelist to Array
-    const boxes = Array.from(document.querySelectorAll('.box'));
     const array = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'];
 
     // Render every element on the array on the HTML grid
@@ -24,3 +22,13 @@ const gameBoard = (() => {
 })();
 
 gameBoard.renderArray();
+
+// Select all boxes and convert Nodelist to Array
+const boxes = Array.from(document.querySelectorAll('.box'));
+// Add event listeners to all boxes
+boxes.forEach((element) => {
+    element.addEventListener('click', () => {
+        // console log element id
+        console.log(element.id);
+    });
+});
