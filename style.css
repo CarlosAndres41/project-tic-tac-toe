@@ -4,19 +4,70 @@
     box-sizing: border-box;
 }
 
-.body {
+body {
+    background-color: var(--black);
+}
+
+header {
+    text-align: center;
+    color: var(--purple);
+    padding: 2em;
+}
+
+:root {
+    --black: #181823;
+    --purple: #537fe7;
+    --blue: #c0eef2;
+    --white: #e9f8f9;
 }
 
 .gameboard {
-    border: 1px solid black;
-    background-color: antiquewhite;
-    width: 60%;
+    padding: 10px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 100px;
-    gap: 1rem;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    width: 70%;
+    height: 500px;
+    margin: 0 auto;
+    align-content: center;
+    justify-content: center;
 }
 
 .gameboard > div {
-    border: 1px solid black;
+}
+
+div #box1 {
+    border-right: 3px solid var(--white);
+    border-bottom: 3px solid var(--white);
+}
+
+div #box2 {
+    border-right: 3px solid var(--white);
+    border-bottom: 3px solid var(--white);
+}
+
+div #box3 {
+    border-bottom: 3px solid var(--white);
+}
+
+div #box4 {
+    border-right: 3px solid var(--white);
+}
+
+div #box5 {
+    border-right: 3px solid var(--white);
+}
+
+div #box7 {
+    border-right: 3px solid var(--white);
+    border-top: 3px solid var(--white);
+}
+
+div #box8 {
+    border-right: 3px solid var(--white);
+    border-top: 3px solid var(--white);
+}
+
+div #box9 {
+    border-top: 3px solid var(--white);
 }
