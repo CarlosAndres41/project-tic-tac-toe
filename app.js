@@ -34,10 +34,10 @@ const game = (() => {
             let boxIndex = element.dataset.index;
             // if array's index is empty (""), allow to change it for a marker
             if (array[boxIndex] === '') {
-                element.textContent = 'X';
+                array[boxIndex] = 'X';
+                console.log(array);
+                gameBoard.renderArray(array);
             }
         });
     });
-
-    gameBoard.renderArray(array);
 })();
