@@ -6,12 +6,16 @@ const player = (name, marker) => {
 
 // Gameboard Module
 
-const newGameBoard = (() => {
-    const gameboardDiv = document.querySelector('.gameboard');
+const gameBoard = (() => {
+    // Select all boxes and convert Nodelist to Array
+    const boxes = Array.from(document.querySelectorAll('.box'));
     const array = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'];
+
+    // Render every element on the array on the HTML grid
     const renderArray = () => {
-        array.forEach((element) => {
-            gameboardDiv.append(document.createElement('div'));
+        array.forEach((element, index) => {
+            const boxId = `#box${index + 1}`;
+            document.querySelector(boxId).textContent = element;
         });
     };
     return {
@@ -19,4 +23,4 @@ const newGameBoard = (() => {
     };
 })();
 
-console.log(newGameBoard.renderArray());
+gameBoard.renderArray();
