@@ -28,7 +28,7 @@ const game = (() => {
 
     // Current Player
 
-    let cuerrentPlayer = player1;
+    let currentPlayer = player1;
     // Initial empty array
     const array = ['', '', '', '', '', '', '', '', ''];
     // Select all boxes and convert Nodelist to Array
@@ -41,9 +41,15 @@ const game = (() => {
             let boxIndex = element.dataset.index;
             // if array's index is empty (""), allow to change it for a marker
             if (array[boxIndex] === '') {
-                array[boxIndex] = 'X';
+                array[boxIndex] = currentPlayer.marker;
                 console.log(array);
                 gameBoard.renderArray(array);
+            }
+            // Alternate between players
+            if (currentPlayer === player1) {
+                currentPlayer = player2;
+            } else {
+                currentPlayer = player1;
             }
         });
     });
