@@ -25,6 +25,10 @@ const game = (() => {
     // Create Players:
     let player1 = player('Player1', 'X');
     let player2 = player('Player2', 'O');
+
+    // Current Player
+
+    let cuerrentPlayer = player1;
     // Initial empty array
     const array = ['', '', '', '', '', '', '', '', ''];
     // Select all boxes and convert Nodelist to Array
