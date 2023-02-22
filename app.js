@@ -14,8 +14,66 @@ const gameBoard = (() => {
             document.querySelector(boxId).textContent = element;
         });
     };
+    const checkForWinning = (array, p1marker, p2marker) => {
+        if (
+            (array[0] === p1marker &&
+                array[1] === p1marker &&
+                array[2] === p1marker) ||
+            (array[3] === p1marker &&
+                array[4] === p1marker &&
+                array[5] === p1marker) ||
+            (array[6] === p1marker &&
+                array[7] === p1marker &&
+                array[8] === p1marker) ||
+            (array[0] === p1marker &&
+                array[3] === p1marker &&
+                array[6] === p1marker) ||
+            (array[1] === p1marker &&
+                array[4] === p1marker &&
+                array[7] === p1marker) ||
+            (array[2] === p1marker &&
+                array[5] === p1marker &&
+                array[8] === p1marker) ||
+            (array[0] === p1marker &&
+                array[4] === p1marker &&
+                array[8] === p1marker) ||
+            (array[2] === p1marker &&
+                array[4] === p1marker &&
+                array[6] === p1marker)
+        ) {
+            return true;
+        } else if (
+            (array[0] === p2marker &&
+                array[1] === p2marker &&
+                array[2] === p2marker) ||
+            (array[3] === p2marker &&
+                array[4] === p2marker &&
+                array[5] === p2marker) ||
+            (array[6] === p2marker &&
+                array[7] === p2marker &&
+                array[8] === p2marker) ||
+            (array[0] === p2marker &&
+                array[3] === p2marker &&
+                array[6] === p2marker) ||
+            (array[1] === p2marker &&
+                array[4] === p2marker &&
+                array[7] === p2marker) ||
+            (array[2] === p2marker &&
+                array[5] === p2marker &&
+                array[8] === p2marker) ||
+            (array[0] === p2marker &&
+                array[4] === p2marker &&
+                array[8] === p2marker) ||
+            (array[2] === p2marker &&
+                array[4] === p2marker &&
+                array[6] === p2marker)
+        ) {
+            return true;
+        }
+    };
     return {
         renderArray,
+        checkForWinning,
     };
 })();
 
@@ -43,10 +101,17 @@ const game = (() => {
             if (array[boxIndex] === '') {
                 array[boxIndex] = currentPlayer.marker;
                 console.log(array);
+                console.log(player1.marker);
                 gameBoard.renderArray(array);
             }
-            // Alternate between players
+            // Check if there's a winner
+            if (
+                gameBoard.checkForWinning(array, player1.marker, player2.marker)
+            ) {
+                console.log(`The winner is ${currentPlayer.name}`);
+            }
             if (currentPlayer === player1) {
+                // Alternate between players
                 currentPlayer = player2;
             } else {
                 currentPlayer = player1;
