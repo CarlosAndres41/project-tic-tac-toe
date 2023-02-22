@@ -85,35 +85,45 @@ const game = (() => {
     let player2 = player('Player2', 'O');
 
     // Current Player
-
     let currentPlayer = player1;
+
     // Initial empty array
     const array = ['', '', '', '', '', '', '', '', ''];
+
     // Select all boxes and convert Nodelist to Array
     const boxes = Array.from(document.querySelectorAll('.box'));
     // Add a marker everytime an empty box is clicked
     // Add event listeners to all boxes
-    boxes.forEach((element) => {
-        element.addEventListener('click', () => {
-            // get box data-index
-            let boxIndex = element.dataset.index;
-            // if array's index is empty (""), allow to change it for a marker
-            if (array[boxIndex] === '') {
-                array[boxIndex] = currentPlayer.marker;
-                gameBoard.renderArray(array);
-            }
-            // Check if there's a winner
-            if (
-                gameBoard.checkForWinning(array, player1.marker, player2.marker)
-            ) {
-                console.log(`The winner is ${currentPlayer.name}`);
-            }
-            if (currentPlayer === player1) {
-                // Alternate between players
-                currentPlayer = player2;
-            } else {
-                currentPlayer = player1;
-            }
+    const playGame = () => {
+        boxes.forEach((element) => {
+            element.addEventListener('click', () => {
+                // get box data-index
+                let boxIndex = element.dataset.index;
+                // if array's index is empty (""), allow to change it for a marker
+                if (array[boxIndex] === '') {
+                    array[boxIndex] = currentPlayer.marker;
+                    gameBoard.renderArray(array);
+                }
+                // Check if there's a winner
+                if (
+                    gameBoard.checkForWinning(
+                        array,
+                        player1.marker,
+                        player2.marker
+                    )
+                ) {
+                    console.log(`The winner is ${currentPlayer.name}`);
+                }
+                if (currentPlayer === player1) {
+                    // Alternate between players
+                    currentPlayer = player2;
+                } else {
+                    currentPlayer = player1;
+                }
+            });
         });
-    });
+    };
+    return { playGame };
 })();
+
+game.playGame();
