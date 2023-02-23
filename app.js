@@ -131,13 +131,18 @@ const game = (() => {
                     )
                 ) {
                     console.log(`The winner is ${currentPlayer.name}`);
-                    gameBoard.cleanBoard();
+                    // Prevent further clicks once game is over
+                    document.querySelector('.gameboard').style.pointerEvents =
+                        'none';
+                    return; // End Game
                 } else if (
                     // Check for a tie
                     !array.includes('')
                 ) {
                     console.log("It's a tie");
-                    gameBoard.cleanBoard();
+                    document.querySelector('.gameboard').style.pointerEvents =
+                        'none';
+                    return; // End Game
                 } else {
                     alternate();
                 }
