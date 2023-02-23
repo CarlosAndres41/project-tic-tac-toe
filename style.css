@@ -21,34 +21,6 @@ header h1 {
     font-weight: 600;
 }
 
-:root {
-    --black: #181823;
-    --purple: #537fe7;
-    --blue: #c0eef2;
-    --white: #e9f8f9;
-}
-
-.gameboard {
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(3, 150px);
-    grid-template-rows: repeat(3, 150px);
-    width: 70%;
-    height: 500px;
-    margin: 0 auto;
-    align-content: center;
-    justify-content: center;
-}
-
-.box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--purple);
-    font-family: 'Gochi Hand', cursive;
-    font-size: 140px;
-}
-
 div #box1 {
     border-right: 3px solid var(--white);
     border-bottom: 3px solid var(--white);
@@ -83,4 +55,55 @@ div #box8 {
 
 div #box9 {
     border-top: 3px solid var(--white);
+}
+
+:root {
+    --black: #181823;
+    --purple: #537fe7;
+    --blue: #c0eef2;
+    --white: #e9f8f9;
+}
+
+.gameboard {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    width: 70%;
+    height: 500px;
+    margin: 0 auto;
+    align-content: center;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--purple);
+    font-family: 'Gochi Hand', cursive;
+    font-size: 140px;
+}
+
+.play-again {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-again-btn {
+    font-style: inherit;
+    font-size: 2rem;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--purple);
+    color: var(--black);
+}
+
+.play-again-btn:hover {
+    background-color: var(--blue);
+    color: var(--purple);
 }
