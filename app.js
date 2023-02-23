@@ -113,7 +113,13 @@ const game = (() => {
                     )
                 ) {
                     console.log(`The winner is ${currentPlayer.name}`);
+                } else if (
+                    // Check for a tie
+                    !array.includes('')
+                ) {
+                    console.log("It'a a tie");
                 }
+
                 if (currentPlayer === player1) {
                     // Alternate between players
                     currentPlayer = player2;
