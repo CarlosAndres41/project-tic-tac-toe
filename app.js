@@ -98,6 +98,15 @@ const game = (() => {
     // Initial empty array
     const array = ['', '', '', '', '', '', '', '', ''];
 
+    // alternate between players
+    const alternate = () => {
+        if (currentPlayer === player1) {
+            currentPlayer = player2;
+        } else {
+            currentPlayer = player1;
+        }
+    };
+
     // Select all boxes and convert Nodelist to Array
     const boxes = Array.from(document.querySelectorAll('.box'));
 
@@ -131,12 +140,7 @@ const game = (() => {
                     gameBoard.cleanBoard();
                 }
 
-                if (currentPlayer === player1) {
-                    // Alternate between players
-                    currentPlayer = player2;
-                } else {
-                    currentPlayer = player1;
-                }
+                alternate();
             });
         });
     };
