@@ -136,11 +136,11 @@ const game = (() => {
                     // Check for a tie
                     !array.includes('')
                 ) {
-                    console.log("It'a a tie");
+                    console.log("It's a tie");
                     gameBoard.cleanBoard();
+                } else {
+                    alternate();
                 }
-
-                alternate();
             });
         });
     };
