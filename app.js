@@ -14,6 +14,13 @@ const gameBoard = (() => {
             document.querySelector(boxId).textContent = element;
         });
     };
+
+    const cleanBoard = () => {
+        const cleanArray = ['', '', '', '', '', '', '', '', ''];
+        renderArray(cleanArray);
+    };
+
+    // Check for winning conditions
     const checkForWinning = (array, p1marker, p2marker) => {
         if (
             (array[0] === p1marker &&
@@ -74,6 +81,7 @@ const gameBoard = (() => {
     return {
         renderArray,
         checkForWinning,
+        cleanBoard,
     };
 })();
 
@@ -92,9 +100,10 @@ const game = (() => {
 
     // Select all boxes and convert Nodelist to Array
     const boxes = Array.from(document.querySelectorAll('.box'));
-    // Add a marker everytime an empty box is clicked
-    // Add event listeners to all boxes
+
     const playGame = () => {
+        // Add a marker everytime an empty box is clicked
+        // Add event listeners to all boxes
         boxes.forEach((element) => {
             element.addEventListener('click', () => {
                 // get box data-index
@@ -113,11 +122,13 @@ const game = (() => {
                     )
                 ) {
                     console.log(`The winner is ${currentPlayer.name}`);
+                    gameBoard.cleanBoard();
                 } else if (
                     // Check for a tie
                     !array.includes('')
                 ) {
                     console.log("It'a a tie");
+                    gameBoard.cleanBoard();
                 }
 
                 if (currentPlayer === player1) {
