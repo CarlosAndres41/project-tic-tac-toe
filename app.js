@@ -101,6 +101,25 @@ const game = (() => {
         }
     };
 
+    const checkAfterClick = () => {
+        // Check for winning conditions
+        if (checkForWinning(array, player1.marker, player2.marker)) {
+            // Display winner
+            document.querySelector(
+                '.winner'
+            ).textContent = `${currentPlayer.name} wins!`;
+            currentPlayer.score += 1; // End Game
+            // Prevent further clicks once game is over
+            document.querySelector('.gameboard').style.pointerEvents = 'none';
+        } else if (!array.includes('')) {
+            // Check for a tie
+            console.log("It's a tie"); // End Game
+            document.querySelector('.gameboard').style.pointerEvents = 'none';
+        } else {
+            alternate();
+        }
+    };
+
     const playGame = () => {
         // Current Player
         currentPlayer = player1;
@@ -115,24 +134,7 @@ const game = (() => {
             element.onclick = (e) => {
                 let boxIndex = e.target.dataset.index;
                 gameBoard.putMarker(array, currentPlayer, boxIndex);
-                // Check for winning conditions
-                if (checkForWinning(array, player1.marker, player2.marker)) {
-                    // Display winner
-                    document.querySelector(
-                        '.winner'
-                    ).textContent = `${currentPlayer.name} wins!`;
-                    currentPlayer.score += 1; // End Game
-                    // Prevent further clicks once game is over
-                    document.querySelector('.gameboard').style.pointerEvents =
-                        'none';
-                } else if (!array.includes('')) {
-                    // Check for a tie
-                    console.log("It's a tie"); // End Game
-                    document.querySelector('.gameboard').style.pointerEvents =
-                        'none';
-                } else {
-                    alternate();
-                }
+                checkAfterClick();
             };
         });
     };
