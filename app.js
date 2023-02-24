@@ -120,7 +120,7 @@ const game = (() => {
             document.querySelector('.gameboard').style.pointerEvents = 'none';
         } else if (!array.includes('')) {
             // Check for a tie
-            console.log("It's a tie"); // End Game
+            document.querySelector('.winner').textContent = "It's a Tie!"; // End Game
             document.querySelector('.gameboard').style.pointerEvents = 'none';
         } else {
             alternate();
