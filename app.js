@@ -119,10 +119,12 @@ const game = (() => {
             element.onclick = (e) => {
                 let boxIndex = e.target.dataset.index;
                 gameBoard.putMarker(array, currentPlayer, boxIndex);
-                console.log(array);
                 // Check for winning conditions
                 if (checkForWinning(array, player1.marker, player2.marker)) {
-                    console.log(`${currentPlayer.name} wins!`);
+                    // Display winner
+                    document.querySelector(
+                        '.winner'
+                    ).textContent = `${currentPlayer.name} wins!`;
                     currentPlayer.score += 1; // End Game
                     // Prevent further clicks once game is over
                     document.querySelector('.gameboard').style.pointerEvents =
@@ -144,6 +146,7 @@ const game = (() => {
 game.playGame();
 function playAgain() {
     document.querySelector('.gameboard').style.pointerEvents = 'auto';
+    document.querySelector('.winner').textContent = '';
     game.playGame();
 }
 

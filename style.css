@@ -85,6 +85,17 @@ div #box9 {
     font-size: 140px;
 }
 
+.winner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.winner {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
 .play-again {
     padding: 2rem;
     display: flex;
