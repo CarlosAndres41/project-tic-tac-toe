@@ -132,6 +132,7 @@ div #box9 {
 }
 
 .play-again-btn:hover {
-    background-color: var(--blue);
+    background-color: var(--black);
     color: var(--purple);
+    border: 1px solid var(--purple);
 }
