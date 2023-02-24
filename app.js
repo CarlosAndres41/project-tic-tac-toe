@@ -103,14 +103,10 @@ const game = (() => {
 
     const playGame = () => {
         // Current Player
-        if (currentPlayer !== player1) {
-            currentPlayer = player1;
-        }
+        currentPlayer = player1;
 
         // Initial empty array
-        if (array !== ['', '', '', '', '', '', '', '', '']) {
-            array = ['', '', '', '', '', '', '', '', ''];
-        }
+        array = ['', '', '', '', '', '', '', '', ''];
 
         gameBoard.renderArray(array);
         const boxes = document.querySelectorAll('.box');
@@ -149,122 +145,3 @@ function playAgain() {
     document.querySelector('.winner').textContent = '';
     game.playGame();
 }
-
-// const boxes = document.querySelectorAll('.box');
-// // Add event listeners to all boxes
-// boxes.forEach((element) => {
-//     element.addEventListener('click', (e) => {
-//         console.log(e.target.dataset.index);
-//     });
-// });
-
-//     // Select all boxes and convert Nodelist to Array
-//     const boxes = Array.from(document.querySelectorAll('.box'));
-
-//     const playGame = () => {
-//         // Add a marker everytime an empty box is clicked
-//         // Add event listeners to all boxes
-//         boxes.forEach((element) => {
-//             element.addEventListener('click', () => {
-//                 // get box data-index
-//                 let boxIndex = element.dataset.index;
-//                 // if array's index is empty (""), allow to change it for a marker
-//                 if (array[boxIndex] === '') {
-//                     array[boxIndex] = currentPlayer.marker;
-//                     gameBoard.renderArray(array);
-//                 }
-//                 // Check if there's a winner
-//                 if (
-//                     gameBoard.checkForWinning(
-//                         array,
-//                         player1.marker,
-//                         player2.marker
-//                     )
-//                 ) {
-//                     console.log(`The winner is ${currentPlayer.name}`);
-//                     // Prevent further clicks once game is over
-//                     document.querySelector('.gameboard').style.pointerEvents =
-//                         'none';
-//                     return; // End Game
-//                 } else if (
-//                     // Check for a tie
-//                     !array.includes('')
-//                 ) {
-//                     console.log("It's a tie");
-//                     document.querySelector('.gameboard').style.pointerEvents =
-//                         'none';
-//                     return; // End Game
-//                 } else {
-//                     alternate();
-//                 }
-//             });
-//         });
-//     };
-//     return { playGame };
-// })();
-
-// game.playGame();
-
-// Check for winning conditions
-// const checkForWinning = (array, p1marker, p2marker) => {
-//     if (
-//         (array[0] === p1marker &&
-//             array[1] === p1marker &&
-//             array[2] === p1marker) ||
-//         (array[3] === p1marker &&
-//             array[4] === p1marker &&
-//             array[5] === p1marker) ||
-//         (array[6] === p1marker &&
-//             array[7] === p1marker &&
-//             array[8] === p1marker) ||
-//         (array[0] === p1marker &&
-//             array[3] === p1marker &&
-//             array[6] === p1marker) ||
-//         (array[1] === p1marker &&
-//             array[4] === p1marker &&
-//             array[7] === p1marker) ||
-//         (array[2] === p1marker &&
-//             array[5] === p1marker &&
-//             array[8] === p1marker) ||
-//         (array[0] === p1marker &&
-//             array[4] === p1marker &&
-//             array[8] === p1marker) ||
-//         (array[2] === p1marker &&
-//             array[4] === p1marker &&
-//             array[6] === p1marker)
-//     ) {
-//         return true;
-//     } else if (
-//         (array[0] === p2marker &&
-//             array[1] === p2marker &&
-//             array[2] === p2marker) ||
-//         (array[3] === p2marker &&
-//             array[4] === p2marker &&
-//             array[5] === p2marker) ||
-//         (array[6] === p2marker &&
-//             array[7] === p2marker &&
-//             array[8] === p2marker) ||
-//         (array[0] === p2marker &&
-//             array[3] === p2marker &&
-//             array[6] === p2marker) ||
-//         (array[1] === p2marker &&
-//             array[4] === p2marker &&
-//             array[7] === p2marker) ||
-//         (array[2] === p2marker &&
-//             array[5] === p2marker &&
-//             array[8] === p2marker) ||
-//         (array[0] === p2marker &&
-//             array[4] === p2marker &&
-//             array[8] === p2marker) ||
-//         (array[2] === p2marker &&
-//             array[4] === p2marker &&
-//             array[6] === p2marker)
-//     ) {
-//         return true;
-//     }
-// };
-// return {
-//     renderArray,
-//     checkForWinning,
-//     cleanBoard,
-// };
