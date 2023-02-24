@@ -85,11 +85,39 @@ div #box9 {
     font-size: 140px;
 }
 
+.winner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.winner {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
 .play-again {
     padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.scoreboard-container {
+    text-align: center;
+    color: var(--blue);
+    padding-top: 1rem;
+}
+
+.scores {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--blue);
 }
 
 .play-again-btn {
@@ -104,6 +132,7 @@ div #box9 {
 }
 
 .play-again-btn:hover {
-    background-color: var(--blue);
+    background-color: var(--black);
     color: var(--purple);
+    border: 1px solid var(--purple);
 }
