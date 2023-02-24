@@ -124,9 +124,14 @@ const game = (() => {
                 if (checkForWinning(array, player1.marker, player2.marker)) {
                     console.log(`${currentPlayer.name} wins!`);
                     currentPlayer.score += 1; // End Game
+                    // Prevent further clicks once game is over
+                    document.querySelector('.gameboard').style.pointerEvents =
+                        'none';
                 } else if (!array.includes('')) {
                     // Check for a tie
                     console.log("It's a tie"); // End Game
+                    document.querySelector('.gameboard').style.pointerEvents =
+                        'none';
                 } else {
                     alternate();
                 }
@@ -137,6 +142,10 @@ const game = (() => {
 })();
 
 game.playGame();
+function playAgain() {
+    document.querySelector('.gameboard').style.pointerEvents = 'auto';
+    game.playGame();
+}
 
 // const boxes = document.querySelectorAll('.box');
 // // Add event listeners to all boxes
