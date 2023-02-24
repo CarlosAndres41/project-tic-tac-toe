@@ -101,6 +101,12 @@ const game = (() => {
         }
     };
 
+    const updateScoreboard = () => {
+        // Update scoreboard
+        document.querySelector('.p1').textContent = `${player1.score}`;
+        document.querySelector('.p2').textContent = `${player2.score}`;
+    };
+
     const checkAfterClick = () => {
         // Check for winning conditions
         if (checkForWinning(array, player1.marker, player2.marker)) {
@@ -109,6 +115,7 @@ const game = (() => {
                 '.winner'
             ).textContent = `${currentPlayer.name} wins!`;
             currentPlayer.score += 1; // End Game
+            updateScoreboard();
             // Prevent further clicks once game is over
             document.querySelector('.gameboard').style.pointerEvents = 'none';
         } else if (!array.includes('')) {
