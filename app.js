@@ -155,7 +155,12 @@ const gameSetUp = (() => {
     const openPopUp = () => {
         p1PopUp.style.display = 'flex';
     };
-    return { openPopUp };
+
+    const closePopUp = () => {
+        p1PopUp.style.display = 'none';
+    };
+
+    return { openPopUp, closePopUp };
 })();
 
 game.playGame();
