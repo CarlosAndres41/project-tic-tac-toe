@@ -12,11 +12,11 @@ body {
 header {
     text-align: center;
     color: var(--blue);
-    padding: 2em;
+    padding: 1.5em;
 }
 
 header h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-style: italic;
     font-weight: 600;
 }
@@ -67,10 +67,10 @@ div #box9 {
 .gameboard {
     padding: 10px;
     display: grid;
-    grid-template-columns: repeat(3, 150px);
-    grid-template-rows: repeat(3, 150px);
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
     width: 70%;
-    height: 500px;
+    height: 400px;
     margin: 0 auto;
     align-content: center;
     justify-content: center;
@@ -97,7 +97,7 @@ div #box9 {
 }
 
 .play-again {
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,15 +115,15 @@ div #box9 {
     justify-content: center;
     gap: 5rem;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-style: italic;
     color: var(--blue);
 }
 
 .play-again-btn {
     font-style: inherit;
-    font-size: 2rem;
-    padding: 5px;
+    font-size: 1.5rem;
+    padding: 3px;
     cursor: pointer;
     border: none;
     border-radius: 10px;
