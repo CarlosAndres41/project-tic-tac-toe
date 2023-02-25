@@ -134,9 +134,10 @@ const game = (() => {
             let index = Math.floor(Math.random() * array.length);
             return array[index] === '' ? index : getValidIndex();
         };
-
-        gameBoard.putMarker(array, currentPlayer, getValidIndex());
-        checkAfterClick();
+        setTimeout(() => {
+            gameBoard.putMarker(array, currentPlayer, getValidIndex());
+            checkAfterClick();
+        }, '500');
     };
 
     const playGame = () => {
