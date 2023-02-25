@@ -140,11 +140,11 @@ div #box9 {
     border-radius: 10px;
     color: var(--black);
     font-size: 1.5rem;
-    transform: translate(117%, -200%);
+    transform: translate(117%, -180%);
 }
 
 .choose-rival {
-    transform: translate(117%, -220%);
+    transform: translate(117%, -200%);
     align-items: center;
 }
 
