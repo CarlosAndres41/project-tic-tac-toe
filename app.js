@@ -148,6 +148,16 @@ const game = (() => {
     return { playGame };
 })();
 
+// Game set-up module
+
+const gameSetUp = (() => {
+    let p1PopUp = document.querySelector('.player1-popup');
+    const openPopUp = () => {
+        p1PopUp.style.display = 'flex';
+    };
+    return { openPopUp };
+})();
+
 game.playGame();
 function playAgain() {
     document.querySelector('.gameboard').style.pointerEvents = 'auto';

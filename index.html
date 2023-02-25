@@ -21,7 +21,9 @@
             <h2 class="winner"></h2>
         </div>
         <div class="new-game">
-            <button class="new-game-btn" onclick="">New Game</button>
+            <button class="new-game-btn" onclick="gameSetUp.openPopUp()">
+                New Game
+            </button>
         </div>
         <div class="gameboard">
             <div id="box1" class="box" data-index="0"></div>
@@ -51,7 +53,7 @@
             <form class="player1-popup" action="">
                 <label for="p1name">Please enter your name:</label>
                 <input type="text" name="p1name" class="p1name" required />
-                <button type="submit" class="btn-next">Next</button>
+                <button type="button" class="btn-next">Next</button>
                 <button type="button" class="btn-cancel">Close</button>
             </form>
         </div>
