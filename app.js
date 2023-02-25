@@ -145,7 +145,7 @@ const game = (() => {
             };
         });
     };
-    return { playGame };
+    return { playGame, player1, player2 };
 })();
 
 // Game set-up module
@@ -160,10 +160,16 @@ const gameSetUp = (() => {
         p1PopUp.style.display = 'none';
     };
 
-    return { openPopUp, closePopUp };
+    const nextPopUp = () => {
+        let p1name = document.querySelector('input.p1name').value;
+        game.player1.name = p1name === '' ? 'Player1' : p1name;
+        p1PopUp.style.display = 'none';
+    };
+
+    return { openPopUp, closePopUp, nextPopUp };
 })();
 
-game.playGame();
+// game.playGame();
 function playAgain() {
     document.querySelector('.gameboard').style.pointerEvents = 'auto';
     document.querySelector('.winner').textContent = '';
