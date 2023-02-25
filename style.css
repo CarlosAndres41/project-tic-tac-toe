@@ -127,7 +127,8 @@ div #box9 {
 }
 
 /* Pop-ups */
-.player1-popup {
+.player1-popup,
+.choose-rival {
     display: none;
     flex-direction: column;
     width: 30%;
@@ -141,6 +142,15 @@ div #box9 {
     transform: translate(117%, -200%);
 }
 
+.choose-rival {
+    transform: translate(117%, -220%);
+    align-items: center;
+}
+
+.choose-rival h3 {
+    font-weight: 400;
+}
+
 input.p1name {
     font-size: 2rem;
     border: none;
@@ -149,7 +159,9 @@ input.p1name {
 }
 
 .btn-next,
-.btn-cancel {
+.btn-cancel,
+.btn-p2,
+.btn-AI {
     font-style: inherit;
     font-size: 1.2rem;
     padding: 5px;
@@ -162,8 +174,15 @@ input.p1name {
     color: var(--black);
 }
 
+.btn-p2,
+.btn-AI {
+    width: 25%;
+}
+
 .btn-next:hover,
-.btn-cancel:hover {
+.btn-cancel:hover,
+.btn-p2:hover,
+.btn-AI:hover {
     background-color: var(--white);
     color: var(--black);
     border: 1px solid var(--black);
@@ -200,4 +219,8 @@ input.p1name {
 .new-game-btn:hover:after {
     opacity: 1;
     padding-right: 1rem;
+}
+
+button span {
+    padding-right: 5px;
 }

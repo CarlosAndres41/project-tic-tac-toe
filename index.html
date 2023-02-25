@@ -11,6 +11,10 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="style.css" />
+        <script
+            src="https://kit.fontawesome.com/3fa5474075.js"
+            crossorigin="anonymous"
+        ></script>
         <title>Tic Tac Toe</title>
     </head>
     <body>
@@ -75,6 +79,22 @@
                     Close
                 </button>
             </form>
+        </div>
+        <div class="choose-rival">
+            <h3>Choose your rival</h3>
+            <button type="button" class="btn-p2" onclick="">
+                <span>User</span> <i class="fa-solid fa-user"></i>
+            </button>
+            <button type="button" class="btn-AI" onclick="">
+                <span>AI</span><i class="fa-solid fa-brain"></i>
+            </button>
+            <button
+                type="button"
+                class="btn-cancel"
+                onclick="gameSetUp.closePopUp()"
+            >
+                Close
+            </button>
         </div>
         <script src="app.js"></script>
     </body>
