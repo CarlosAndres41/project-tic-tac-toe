@@ -126,7 +126,49 @@ div #box9 {
     color: var(--blue);
 }
 
-/* Buttons */
+/* Pop-ups */
+.player1-popup {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: var(--purple);
+    padding: 2rem;
+    gap: 10px;
+    border: 2px solid var(--blue);
+    border-radius: 10px;
+    color: var(--black);
+    font-size: 1.5rem;
+    transform: translate(117%, -200%);
+}
+
+input.p1name {
+    font-size: 2rem;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.btn-next,
+.btn-cancel {
+    font-style: inherit;
+    font-size: 1.2rem;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    width: 20%;
+    align-self: center;
+    background-color: var(--blue);
+    color: var(--black);
+}
+
+.btn-next:hover,
+.btn-cancel:hover {
+    background-color: var(--white);
+    color: var(--black);
+    border: 1px solid var(--black);
+}
+
 .play-again-btn,
 .new-game-btn {
     font-style: inherit;
@@ -157,5 +199,5 @@ div #box9 {
 
 .new-game-btn:hover:after {
     opacity: 1;
-    padding-right: 1.2rem;
+    padding-right: 1rem;
 }
