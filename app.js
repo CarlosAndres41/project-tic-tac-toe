@@ -127,6 +127,18 @@ const game = (() => {
         }
     };
 
+    const moveAI = () => {
+        // Pick any available index randomly
+
+        let getValidIndex = () => {
+            let index = Math.floor(Math.random() * array.length);
+            return array[index] === '' ? index : getValidIndex();
+        };
+
+        gameBoard.putMarker(array, currentPlayer, getValidIndex());
+        checkAfterClick();
+    };
+
     const playGame = () => {
         // Current Player
         currentPlayer = player1;
@@ -142,6 +154,9 @@ const game = (() => {
                 let boxIndex = e.target.dataset.index;
                 gameBoard.putMarker(array, currentPlayer, boxIndex);
                 checkAfterClick();
+                if (currentPlayer.name === 'AI') {
+                    moveAI();
+                }
             };
         });
     };
@@ -197,6 +212,16 @@ const gameSetUp = (() => {
         game.playGame();
     };
 
+    const playVsAI = () => {
+        game.player2.name = 'AI';
+        document.querySelector('.p2score-name').textContent = 'AI:';
+        closeRivalPopUp();
+        newGameBtn.style.display = 'none';
+        document.querySelector('.scoreboard-container').style.display = 'block';
+        document.querySelector('.play-again').style.display = 'flex';
+        game.playGame();
+    };
+
     return {
         openPopUp,
         closePopUp,
@@ -205,6 +230,7 @@ const gameSetUp = (() => {
         pickUser,
         closeP2PopUp,
         play,
+        playVsAI,
     };
 })();
 
