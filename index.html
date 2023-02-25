@@ -43,8 +43,12 @@
         <div class="scoreboard-container">
             <h2>Current score:</h2>
             <div class="scores">
-                <div class="p1score">Player1: <span class="p1">0</span></div>
-                <div class="p2score">Player2: <span class="p2">0</span></div>
+                <div class="p1score">
+                    <span class="p1score-name"></span> <span class="p1">0</span>
+                </div>
+                <div class="p2score">
+                    <span class="p2score-name"></span><span class="p2">0</span>
+                </div>
             </div>
         </div>
         <div class="play-again">
@@ -82,7 +86,7 @@
         </div>
         <div class="choose-rival">
             <h3>Choose your rival</h3>
-            <button type="button" class="btn-p2" onclick="">
+            <button type="button" class="btn-p2" onclick="gameSetUp.pickUser()">
                 <span>User</span> <i class="fa-solid fa-user"></i>
             </button>
             <button type="button" class="btn-AI" onclick="">
@@ -91,10 +95,37 @@
             <button
                 type="button"
                 class="btn-cancel"
-                onclick="gameSetUp.closePopUp()"
+                onclick="gameSetUp.closeRivalPopUp()"
             >
                 Close
             </button>
+        </div>
+        <div>
+            <form class="player2-popup" action="">
+                <label for="p2name">Please enter your name:</label>
+                <input
+                    type="text"
+                    name="p2name"
+                    class="p2name"
+                    placeholder="Player2"
+                    value="Player2"
+                    required
+                />
+                <button
+                    type="button"
+                    class="btn-next"
+                    onclick="gameSetUp.play()"
+                >
+                    Play
+                </button>
+                <button
+                    type="button"
+                    class="btn-cancel"
+                    onclick="gameSetUp.closeP2PopUp()"
+                >
+                    Close
+                </button>
+            </form>
         </div>
         <script src="app.js"></script>
     </body>

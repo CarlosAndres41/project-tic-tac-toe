@@ -12,7 +12,7 @@ body {
 header {
     text-align: center;
     color: var(--blue);
-    padding: 1.5em;
+    padding: 10px 1.5em 1.5em 1.5em;
 }
 
 header h1 {
@@ -65,7 +65,7 @@ div #box9 {
 }
 
 .gameboard {
-    padding: 10px;
+    padding: 5px;
     display: grid;
     grid-template-columns: repeat(3, 120px);
     grid-template-rows: repeat(3, 120px);
@@ -128,7 +128,8 @@ div #box9 {
 
 /* Pop-ups */
 .player1-popup,
-.choose-rival {
+.choose-rival,
+.player2-popup {
     display: none;
     flex-direction: column;
     width: 30%;
@@ -151,7 +152,8 @@ div #box9 {
     font-weight: 400;
 }
 
-input.p1name {
+input.p1name,
+input.p2name {
     font-size: 2rem;
     border: none;
     border-radius: 5px;

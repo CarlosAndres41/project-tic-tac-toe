@@ -151,7 +151,10 @@ const game = (() => {
 // Game set-up module
 
 const gameSetUp = (() => {
+    let newGameBtn = document.querySelector('.new-game-btn');
     let p1PopUp = document.querySelector('.player1-popup');
+    let rivalPopUp = document.querySelector('.choose-rival');
+    let p2PopUp = document.querySelector('.player2-popup');
     const openPopUp = () => {
         p1PopUp.style.display = 'flex';
     };
@@ -163,10 +166,46 @@ const gameSetUp = (() => {
     const nextPopUp = () => {
         let p1name = document.querySelector('input.p1name').value;
         game.player1.name = p1name === '' ? 'Player1' : p1name;
+        document.querySelector('.p1score-name').textContent =
+            p1name === '' ? 'Player1:' : `${p1name}:`;
         p1PopUp.style.display = 'none';
+        rivalPopUp.style.display = 'flex';
     };
 
-    return { openPopUp, closePopUp, nextPopUp };
+    const closeRivalPopUp = () => {
+        rivalPopUp.style.display = 'none';
+    };
+
+    const closeP2PopUp = () => {
+        p2PopUp.style.display = 'none';
+    };
+
+    const pickUser = () => {
+        closeRivalPopUp();
+        p2PopUp.style.display = 'flex';
+    };
+
+    const play = () => {
+        let p2name = document.querySelector('input.p2name').value;
+        game.player2.name = p2name === '' ? 'Player2' : p2name;
+        document.querySelector('.p2score-name').textContent =
+            p2name === '' ? 'Player2:' : `${p2name}:`;
+        p2PopUp.style.display = 'none';
+        newGameBtn.style.display = 'none';
+        document.querySelector('.scoreboard-container').style.display = 'block';
+        document.querySelector('.play-again').style.display = 'flex';
+        game.playGame();
+    };
+
+    return {
+        openPopUp,
+        closePopUp,
+        nextPopUp,
+        closeRivalPopUp,
+        pickUser,
+        closeP2PopUp,
+        play,
+    };
 })();
 
 // game.playGame();
